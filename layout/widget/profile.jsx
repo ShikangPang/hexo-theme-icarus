@@ -38,7 +38,7 @@ class Profile extends Component {
                                 <img class={'avatar' + (avatarRounded ? ' is-rounded' : '')} src={avatar} alt={author} />
                             </figure>
                             {author ? <p class="title is-size-4 is-block" style={{'line-height': 'inherit'}}>{author}</p> : null}
-                            {authorTitle ? <p class="is-size-6 is-block">{authorTitle}</p> : null}
+                            {authorTitle ? <p style="white-space: pre; font-style: italic;margin-bottom: 0.50rem; font-size: 0.8em" class="is-block">{authorTitle}</p> : null}
                             {location ? <p class="is-size-6 is-flex justify-content-center">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                 <span>{location}</span>
@@ -86,7 +86,7 @@ Profile.Cacheable = cacheComponent(Profile, 'widget.profile', props => {
     const {
         avatar,
         gravatar,
-        avatar_rounded = false,
+        avatar_rounded = true,
         author = props.config.author,
         author_title,
         location,
